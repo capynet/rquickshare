@@ -10,7 +10,7 @@ const props = defineProps({
 	}
 });
 
-const emit = defineEmits(['trust', 'decline', 'block']);
+const emit = defineEmits(['trust', 'block']);
 
 async function handleTrust() {
 	if (!props.vm.pendingTrustRequest) return;

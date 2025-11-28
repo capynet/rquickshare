@@ -14,7 +14,6 @@
 				<TrustDeviceCallout
 					:vm="vm"
 					@trust="handleTrustAccept"
-					@decline="handleTrustDecline"
 					@block="handleTrustBlock" />
 
 				<div
@@ -434,9 +433,6 @@ export default {
 			const requestId = this.pendingTrustRequest.id;
 			this.clearPendingTrustRequest(this);
 			await this.sendCmd(this, requestId, 'AcceptTransfer');
-		},
-		handleTrustDecline: async function() {
-			this.clearPendingTrustRequest(this);
 		},
 		handleTrustBlock: async function() {
 			this.clearPendingTrustRequest(this);
